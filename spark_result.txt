@@ -1,47 +1,75 @@
->>> result.show(20, False)
-+---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+----------------------------------------------------------+
-|master_id|master_desc                                             |order_id|order_date|order_due_date|order_fact_completion_date|order_customer_id|order_customer_desc                                       |
-+---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+----------------------------------------------------------+
-|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |694450  |2024-02-19|2024-04-01    |2024-04-21                |100194           |Имя: Радислав Ааронович Ларионов; должник, постоянный.    |
-|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |280585  |2024-02-21|2024-03-28    |2024-04-02                |588479           |Имя: Лазарь Всеволодович Рогов; постоянный, должник.      |
-|791839   |Август Дорофеевич Кошелев, Стаж Работы: 11 Л./Г..       |455917  |2024-01-12|2024-04-14    |2024-04-17                |775977           |Имя: Аполлинарий Архипович Гордеев; должник, премиальный. |
-|325551   |Фадеев Демид Адамович, Стаж Работы: 12 Л./Г..           |991297  |2023-12-28|2024-04-03    |2024-04-09                |825381           |Имя: Никон Еремеевич Носов; премиальный, должник.         |
-|96520    |Давыдова Александра Харитоновна, Стаж Работы: 12 Л./Г.. |898353  |2024-02-15|2024-03-29    |2024-04-12                |152335           |Имя: Журавлева Нинель Богдановна; должник, постоянный.    |
-|979439   |Никанор Всеволодович Агафонов, Тип Образования: Среднее.|695577  |2024-01-01|2024-03-31    |2024-04-03                |758386           |Имя: Антип Ермилович Гуляев; премиальный, постоянный.     |
-|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |812255  |2023-12-20|2024-04-16    |2024-04-20                |73616            |Имя: Селезнев Мир Димитриевич; постоянный, должник.       |
-|618529   |Аполлон Харитонович Афанасьев, Стаж Работы: 5 Л./Г..    |214485  |2024-01-11|2024-03-25    |2024-04-11                |909784           |Имя: Фомичева Светлана Мироновна; постоянный, должник.    |
-|490853   |Святополк Герасимович Трофимов, Стаж Работы: 5 Л./Г..   |751129  |2024-01-10|2024-03-31    |2024-04-09                |280271           |Имя: Гаврила Брониславович Юдин; должник, премиальный.    |
-|827062   |Никонова Наталья Юрьевна, Тип Образования: Среднее.     |496144  |2024-01-25|2024-04-05    |2024-04-09                |53               |Имя: Алина Валентиновна Филиппова; должник, премиальный.  |
-|717684   |Михеев Тарас Теймуразович, Тип Образования: Среднее.    |241691  |2024-01-10|2024-04-05    |2024-04-12                |602006           |Имя: Жуков Аполлинарий Демьянович; постоянный, должник.   |
-|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |700073  |2024-02-18|2024-03-27    |2024-03-29                |633900           |Имя: Романова Регина Антоновна; премиальный, постоянный.  |
-|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |267383  |2024-01-10|2024-03-29    |2024-04-21                |582353           |Имя: Абрамов Пров Тимурович; должник, премиальный.        |
-|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |178936  |2024-02-14|2024-04-11    |2024-04-22                |228365           |Имя: Давыдов Самсон Захарьевич; постоянный, должник.      |
-|377918   |Дьячков Евстигней Гаврилович, Стаж Работы: 15 Л./Г..    |813177  |2023-12-26|2024-04-14    |2024-04-18                |48432            |Имя: Ефрем Федосьевич Поляков; премиальный, должник.      |
-|824261   |Фёкла Аскольдовна Нестерова, Тип Образования: Среднее.  |776226  |2024-01-10|2024-03-30    |2024-04-13                |831281           |Имя: Вацлав Аксёнович Бобылев; должник, премиальный.      |
-|717684   |Михеев Тарас Теймуразович, Тип Образования: Среднее.    |938307  |2024-01-29|2024-03-26    |2024-03-28                |816936           |Имя: Авдеев Никанор Бориславович; постоянный, премиальный.|
-|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |357205  |2024-01-17|2024-03-27    |2024-04-09                |592217           |Имя: Олег Викентьевич Капустин; премиальный, постоянный.  |
-|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |688334  |2024-01-12|2024-03-31    |2024-04-10                |928293           |Имя: Людмила Наумовна Нестерова; постоянный, должник.     |
-|406292   |Сильвестр Ерофеевич Филиппов, Стаж Работы: 3 Л./Г..     |858138  |2024-01-31|2024-04-21    |2024-04-22                |783633           |Имя: г-н Носков Тарас Артёмович; должник, постоянный.     |
-+---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+----------------------------------------------------------+
-only showing top 20 rows
+>>> result.show(70, False)
++---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+--------------------------------------------------------------+
+|master_id|master_desc                                             |order_id|order_date|order_due_date|order_fact_completion_date|order_customer_id|order_customer_desc                                           |
++---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+--------------------------------------------------------------+
+|96520    |Давыдова Александра Харитоновна, Стаж Работы: 12 Л./Г.. |939218  |2024-01-27|2024-03-24    |2024-04-11                |290404           |Имя: Жанна Владиславовна Семенова; должник, постоянный.       |
+|245954   |Леон Власович Хохлов, Тип Образования: Среднее.         |696901  |2024-02-08|2024-04-01    |2024-04-13                |500287           |Имя: Орехова Нинель Мироновна; премиальный, должник.          |
+|827062   |Никонова Наталья Юрьевна, Тип Образования: Среднее.     |672767  |2024-01-14|2024-03-28    |2024-04-06                |563995           |Имя: Котова Октябрина Степановна; постоянный, премиальный.    |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |161952  |2023-12-31|2024-03-29    |2024-03-30                |524235           |Имя: Гаврилов Георгий Давидович; постоянный, должник.         |
+|96520    |Давыдова Александра Харитоновна, Стаж Работы: 12 Л./Г.. |782987  |2024-01-10|2024-04-03    |2024-04-14                |185734           |Имя: Громов Евграф Ефстафьевич; должник, премиальный.         |
+|377918   |Дьячков Евстигней Гаврилович, Стаж Работы: 15 Л./Г..    |93701   |2024-02-02|2024-04-02    |2024-04-16                |824162           |Имя: Нинель Олеговна Исаева; премиальный, должник.            |
+|140834   |Анна Валентиновна Сазонова, Стаж Работы: 15 Л./Г..      |872754  |2024-02-04|2024-03-29    |2024-04-03                |258409           |Имя: тов. Петров Олимпий Гертрудович; постоянный, премиальный.|
+|800991   |Сысоев Селиверст Елизарович, Тип Образования: Высшее.   |214108  |2024-02-14|2024-04-17    |2024-04-18                |410014           |Имя: Юрий Фролович Герасимов; должник, премиальный.           |
+|717684   |Михеев Тарас Теймуразович, Тип Образования: Среднее.    |881244  |2024-02-07|2024-04-05    |2024-04-19                |318498           |Имя: Самойлова Нонна Эдуардовна; премиальный, постоянный.     |
+|406292   |Сильвестр Ерофеевич Филиппов, Стаж Работы: 3 Л./Г..     |906450  |2023-12-23|2024-03-25    |2024-03-28                |549823           |Имя: Варвара Сергеевна Аксенова; премиальный, должник.        |
+|319301   |Громова Жанна Богдановна, Тип Образования: Высшее.      |766044  |2023-12-17|2024-03-26    |2024-04-03                |416915           |Имя: Агафья Богдановна Горбачева; должник, премиальный.       |
+|979439   |Никанор Всеволодович Агафонов, Тип Образования: Среднее.|489912  |2024-02-12|2024-03-24    |2024-03-26                |172851           |Имя: Логинова Ольга Борисовна; премиальный, должник.          |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |816038  |2023-12-19|2024-03-27    |2024-04-05                |622937           |Имя: Мария Кирилловна Лебедева; постоянный, должник.          |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |27176   |2024-02-19|2024-04-11    |2024-04-20                |560564           |Имя: Степанова Регина Харитоновна; постоянный, премиальный.   |
+|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |421214  |2023-12-18|2024-03-27    |2024-04-14                |381927           |Имя: Нинель Борисовна Турова; постоянный, должник.            |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |611406  |2024-01-25|2024-03-26    |2024-04-04                |217169           |Имя: Эрнест Всеволодович Бобылев; премиальный, постоянный.    |
+|490853   |Святополк Герасимович Трофимов, Стаж Работы: 5 Л./Г..   |799520  |2024-01-15|2024-04-13    |2024-04-16                |898147           |Имя: Иосиф Феофанович Лукин; постоянный, премиальный.         |
+|979439   |Никанор Всеволодович Агафонов, Тип Образования: Среднее.|148665  |2024-01-14|2024-04-12    |2024-04-16                |665439           |Имя: Филиппова Татьяна Валентиновна; постоянный, премиальный. |
+|490853   |Святополк Герасимович Трофимов, Стаж Работы: 5 Л./Г..   |55008   |2024-01-10|2024-04-05    |2024-04-07                |618940           |Имя: Овчинников Максим Тихонович; постоянный, должник.        |
+|827062   |Никонова Наталья Юрьевна, Тип Образования: Среднее.     |496144  |2024-01-25|2024-04-05    |2024-04-09                |53               |Имя: Алина Валентиновна Филиппова; должник, премиальный.      |
+|717684   |Михеев Тарас Теймуразович, Тип Образования: Среднее.    |241691  |2024-01-10|2024-04-05    |2024-04-12                |602006           |Имя: Жуков Аполлинарий Демьянович; постоянный, должник.       |
+|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |700073  |2024-02-18|2024-03-27    |2024-03-29                |633900           |Имя: Романова Регина Антоновна; премиальный, постоянный.      |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |267383  |2024-01-10|2024-03-29    |2024-04-21                |582353           |Имя: Абрамов Пров Тимурович; должник, премиальный.            |
+|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |178936  |2024-02-14|2024-04-11    |2024-04-22                |228365           |Имя: Давыдов Самсон Захарьевич; постоянный, должник.          |
+|377918   |Дьячков Евстигней Гаврилович, Стаж Работы: 15 Л./Г..    |813177  |2023-12-26|2024-04-14    |2024-04-18                |48432            |Имя: Ефрем Федосьевич Поляков; премиальный, должник.          |
+|824261   |Фёкла Аскольдовна Нестерова, Тип Образования: Среднее.  |776226  |2024-01-10|2024-03-30    |2024-04-13                |831281           |Имя: Вацлав Аксёнович Бобылев; должник, премиальный.          |
+|717684   |Михеев Тарас Теймуразович, Тип Образования: Среднее.    |938307  |2024-01-29|2024-03-26    |2024-03-28                |816936           |Имя: Авдеев Никанор Бориславович; постоянный, премиальный.    |
+|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |357205  |2024-01-17|2024-03-27    |2024-04-09                |592217           |Имя: Олег Викентьевич Капустин; премиальный, постоянный.      |
+|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |688334  |2024-01-12|2024-03-31    |2024-04-10                |928293           |Имя: Людмила Наумовна Нестерова; постоянный, должник.         |
+|406292   |Сильвестр Ерофеевич Филиппов, Стаж Работы: 3 Л./Г..     |858138  |2024-01-31|2024-04-21    |2024-04-22                |783633           |Имя: г-н Носков Тарас Артёмович; должник, постоянный.         |
+|490853   |Святополк Герасимович Трофимов, Стаж Работы: 5 Л./Г..   |895737  |2023-12-29|2024-04-04    |2024-04-05                |47794            |Имя: Лариса Кузьминична Исаева; должник, премиальный.         |
+|325551   |Фадеев Демид Адамович, Стаж Работы: 12 Л./Г..           |802944  |2024-01-10|2024-04-07    |2024-04-19                |412942           |Имя: Волкова Пелагея Архиповна; постоянный, премиальный.      |
+|618529   |Аполлон Харитонович Афанасьев, Стаж Работы: 5 Л./Г..    |256879  |2024-01-22|2024-04-11    |2024-04-14                |926611           |Имя: Касьян Игоревич Молчанов; должник, премиальный.          |
+|979439   |Никанор Всеволодович Агафонов, Тип Образования: Среднее.|886987  |2024-01-09|2024-03-28    |2024-04-18                |268762           |Имя: Рогов Аристарх Владленович; премиальный, постоянный.     |
+|618529   |Аполлон Харитонович Афанасьев, Стаж Работы: 5 Л./Г..    |713848  |2023-12-20|2024-04-07    |2024-04-15                |742249           |Имя: Любовь Макаровна Смирнова; постоянный, премиальный.      |
+|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |153055  |2024-02-17|2024-04-11    |2024-04-12                |646008           |Имя: Щербаков Мариан Брониславович; постоянный, должник.      |
+|96520    |Давыдова Александра Харитоновна, Стаж Работы: 12 Л./Г.. |90611   |2024-02-02|2024-03-27    |2024-04-16                |498066           |Имя: Горбачев Варлаам Эдгарович; должник, постоянный.         |
+|319301   |Громова Жанна Богдановна, Тип Образования: Высшее.      |196773  |2024-01-23|2024-03-30    |2024-04-09                |430816           |Имя: Васильев Варлаам Ермолаевич; премиальный, должник.       |
+|618529   |Аполлон Харитонович Афанасьев, Стаж Работы: 5 Л./Г..    |133572  |2023-12-25|2024-03-29    |2024-04-15                |673954           |Имя: тов. Лихачев Родион Юльевич; постоянный, должник.        |
+|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |609676  |2024-01-14|2024-03-28    |2024-04-14                |186445           |Имя: Андреева Ангелина Харитоновна; премиальный, должник.     |
+|678593   |Беляева Ульяна Афанасьевна, Тип Образования: Среднее.   |694450  |2024-02-19|2024-04-01    |2024-04-21                |100194           |Имя: Радислав Ааронович Ларионов; должник, постоянный.        |
+|962470   |Мокей Матвеевич Ефремов, Стаж Работы: 11 Л./Г..         |280585  |2024-02-21|2024-03-28    |2024-04-02                |588479           |Имя: Лазарь Всеволодович Рогов; постоянный, должник.          |
+|791839   |Август Дорофеевич Кошелев, Стаж Работы: 11 Л./Г..       |455917  |2024-01-12|2024-04-14    |2024-04-17                |775977           |Имя: Аполлинарий Архипович Гордеев; должник, премиальный.     |
+|325551   |Фадеев Демид Адамович, Стаж Работы: 12 Л./Г..           |991297  |2023-12-28|2024-04-03    |2024-04-09                |825381           |Имя: Никон Еремеевич Носов; премиальный, должник.             |
+|96520    |Давыдова Александра Харитоновна, Стаж Работы: 12 Л./Г.. |898353  |2024-02-15|2024-03-29    |2024-04-12                |152335           |Имя: Журавлева Нинель Богдановна; должник, постоянный.        |
+|979439   |Никанор Всеволодович Агафонов, Тип Образования: Среднее.|695577  |2024-01-01|2024-03-31    |2024-04-03                |758386           |Имя: Антип Ермилович Гуляев; премиальный, постоянный.         |
+|185439   |Никонова Нинель Болеславовна, Стаж Работы: 13 Л./Г..    |812255  |2023-12-20|2024-04-16    |2024-04-20                |73616            |Имя: Селезнев Мир Димитриевич; постоянный, должник.           |
+|618529   |Аполлон Харитонович Афанасьев, Стаж Работы: 5 Л./Г..    |214485  |2024-01-11|2024-03-25    |2024-04-11                |909784           |Имя: Фомичева Светлана Мироновна; постоянный, должник.        |
+|490853   |Святополк Герасимович Трофимов, Стаж Работы: 5 Л./Г..   |751129  |2024-01-10|2024-03-31    |2024-04-09                |280271           |Имя: Гаврила Брониславович Юдин; должник, премиальный.        |
++---------+--------------------------------------------------------+--------+----------+--------------+--------------------------+-----------------+--------------------------------------------------------------+
 
 >>> result.explain()
 == Physical Plan ==
-*(3) Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_due_date#206, order_fact_completion_date#207, order_customer_id#238, order_customer_desc#239]
-+- *(3) BroadcastHashJoin [order_customer_id#204], [order_customer_id#238], LeftOuter, BuildRight
-   :- *(3) Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207]
-   :  +- *(3) BroadcastHashJoin [master_id#111], [order_master_id#211], Inner, BuildLeft
-   :     :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#380]
-   :     :  +- *(1) Project [master_id#111, master_desc#112]
-   :     :     +- *(1) Filter isnotnull(master_id#111)
-   :     :        +- FileScan csv [master_id#111,master_desc#112] Batched: false, DataFilters: [isnotnull(master_id#111)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/master.csv], PartitionFilters: [], PushedFilters: [IsNotNull(master_id)], ReadSchema: struct<master_id:int,master_desc:string>
-   :     +- *(3) Project [order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207, order_master_id#211]
-   :        +- *(3) Filter (((isnotnull(order_fact_completion_date#207) AND isnotnull(order_due_date#206)) AND (order_fact_completion_date#207 > order_due_date#206)) AND isnotnull(order_master_id#211))
-   :           +- FileScan csv [order_id#202,order_date#203,order_customer_id#204,order_due_date#206,order_fact_completion_date#207,order_master_id#211] Batched: false, DataFilters: [isnotnull(order_fact_completion_date#207), isnotnull(order_due_date#206), (order_fact_completion..., Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/order.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_fact_completion_date), IsNotNull(order_due_date), IsNotNull(order_master_id)], ReadSchema: struct<order_id:int,order_date:string,order_customer_id:int,order_due_date:string,order_fact_comp...
-   +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#391]
-      +- *(2) Project [order_customer_id#238, order_customer_desc#239]
-         +- *(2) Filter isnotnull(order_customer_id#238)
-            +- FileScan csv [order_customer_id#238,order_customer_desc#239] Batched: false, DataFilters: [isnotnull(order_customer_id#238)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/customer.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_customer_id)], ReadSchema: struct<order_customer_id:int,order_customer_desc:string>
+*(3) Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_due_date#42, order_fact_completion_date#43, order_customer_id#74, order_customer_desc#75]
++- *(3) BroadcastHashJoin [order_customer_id#40], [order_customer_id#74], LeftOuter, BuildRight
+   :- *(3) Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43]
+   :  +- *(3) BroadcastHashJoin [master_id#16], [order_master_id#47], Inner, BuildLeft
+   :     :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#788]
+   :     :  +- *(1) Project [master_id#16, master_desc#17]
+   :     :     +- *(1) Filter isnotnull(master_id#16)
+   :     :        +- FileScan csv [master_id#16,master_desc#17] Batched: false, DataFilters: [isnotnull(master_id#16)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/master.csv], PartitionFilters: [], PushedFilters: [IsNotNull(master_id)], ReadSchema: struct<master_id:int,master_desc:string>
+   :     +- *(3) Project [order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43, order_master_id#47]
+   :        +- *(3) Filter (((isnotnull(order_fact_completion_date#43) AND isnotnull(order_due_date#42)) AND (order_fact_completion_date#43 > order_due_date#42)) AND isnotnull(order_master_id#47))
+   :           +- FileScan csv [order_id#38,order_date#39,order_customer_id#40,order_due_date#42,order_fact_completion_date#43,order_master_id#47] Batched: false, DataFilters: [isnotnull(order_fact_completion_date#43), isnotnull(order_due_date#42), (order_fact_completion_d..., Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/order.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_fact_completion_date), IsNotNull(order_due_date), IsNotNull(order_master_id)], ReadSchema: struct<order_id:int,order_date:string,order_customer_id:int,order_due_date:string,order_fact_comp...
+   +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#799]
+      +- *(2) Project [order_customer_id#74, order_customer_desc#75]
+         +- *(2) Filter isnotnull(order_customer_id#74)
+            +- FileScan csv [order_customer_id#74,order_customer_desc#75] Batched: false, DataFilters: [isnotnull(order_customer_id#74)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/customer.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_customer_id)], ReadSchema: struct<order_customer_id:int,order_customer_desc:string>
 
 
 >>> result.explain(True)
@@ -59,49 +87,49 @@ only showing top 20 rows
 
 == Analyzed Logical Plan ==
 master_id: int, master_desc: string, order_id: int, order_date: string, order_due_date: string, order_fact_completion_date: string, order_customer_id: int, order_customer_desc: string
-Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_due_date#206, order_fact_completion_date#207, order_customer_id#238, order_customer_desc#239]
-+- Filter (order_fact_completion_date#207 > order_due_date#206)
-   +- Join LeftOuter, (order_customer_id#204 = order_customer_id#238)
-      :- Join Inner, (order_master_id#211 = master_id#111)
+Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_due_date#42, order_fact_completion_date#43, order_customer_id#74, order_customer_desc#75]
++- Filter (order_fact_completion_date#43 > order_due_date#42)
+   +- Join LeftOuter, (order_customer_id#40 = order_customer_id#74)
+      :- Join Inner, (order_master_id#47 = master_id#16)
       :  :- SubqueryAlias m
       :  :  +- SubqueryAlias master
-      :  :     +- Relation[master_id#111,master_desc#112,master_feedbacks#113] csv
+      :  :     +- Relation[master_id#16,master_desc#17,master_feedbacks#18] csv
       :  +- SubqueryAlias o
       :     +- SubqueryAlias order
-      :        +- Relation[order_id#202,order_date#203,order_customer_id#204,order_details_desc#205,order_due_date#206,order_fact_completion_date#207,order_parts#208,repair_types#209,order_price#210,order_master_id#211] csv
+      :        +- Relation[order_id#38,order_date#39,order_customer_id#40,order_details_desc#41,order_due_date#42,order_fact_completion_date#43,order_parts#44,repair_types#45,order_price#46,order_master_id#47] csv
       +- SubqueryAlias c
          +- SubqueryAlias customer
-            +- Relation[order_customer_id#238,order_customer_desc#239] csv
+            +- Relation[order_customer_id#74,order_customer_desc#75] csv
 
 == Optimized Logical Plan ==
-Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_due_date#206, order_fact_completion_date#207, order_customer_id#238, order_customer_desc#239]
-+- Join LeftOuter, (order_customer_id#204 = order_customer_id#238)
-   :- Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207]
-   :  +- Join Inner, (order_master_id#211 = master_id#111)
-   :     :- Project [master_id#111, master_desc#112]
-   :     :  +- Filter isnotnull(master_id#111)
-   :     :     +- Relation[master_id#111,master_desc#112,master_feedbacks#113] csv
-   :     +- Project [order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207, order_master_id#211]
-   :        +- Filter (((isnotnull(order_fact_completion_date#207) AND isnotnull(order_due_date#206)) AND (order_fact_completion_date#207 > order_due_date#206)) AND isnotnull(order_master_id#211))
-   :           +- Relation[order_id#202,order_date#203,order_customer_id#204,order_details_desc#205,order_due_date#206,order_fact_completion_date#207,order_parts#208,repair_types#209,order_price#210,order_master_id#211] csv
-   +- Filter isnotnull(order_customer_id#238)
-      +- Relation[order_customer_id#238,order_customer_desc#239] csv
-
+Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_due_date#42, order_fact_completion_date#43, order_customer_id#74, order_customer_desc#75]
++- Join LeftOuter, (order_customer_id#40 = order_customer_id#74)
+   :- Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43]
+   :  +- Join Inner, (order_master_id#47 = master_id#16)
+   :     :- Project [master_id#16, master_desc#17]
+   :     :  +- Filter isnotnull(master_id#16)
+   :     :     +- Relation[master_id#16,master_desc#17,master_feedbacks#18] csv
+   :     +- Project [order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43, order_master_id#47]
+   :        +- Filter (((isnotnull(order_fact_completion_date#43) AND isnotnull(order_due_date#42)) AND (order_fact_completion_date#43 > order_due_date#42)) AND isnotnull(order_master_id#47))
+   :           +- Relation[order_id#38,order_date#39,order_customer_id#40,order_details_desc#41,order_due_date#42,order_fact_completion_date#43,order_parts#44,repair_types#45,order_price#46,order_master_id#47] csv
+   +- Filter isnotnull(order_customer_id#74)
+      +- Relation[order_customer_id#74,order_customer_desc#75] csv
 
 == Physical Plan ==
-*(3) Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_due_date#206, order_fact_completion_date#207, order_customer_id#238, order_customer_desc#239]
-+- *(3) BroadcastHashJoin [order_customer_id#204], [order_customer_id#238], LeftOuter, BuildRight
-   :- *(3) Project [master_id#111, master_desc#112, order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207]
-   :  +- *(3) BroadcastHashJoin [master_id#111], [order_master_id#211], Inner, BuildLeft
-   :     :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#380]
-   :     :  +- *(1) Project [master_id#111, master_desc#112]
-   :     :     +- *(1) Filter isnotnull(master_id#111)
-   :     :        +- FileScan csv [master_id#111,master_desc#112] Batched: false, DataFilters: [isnotnull(master_id#111)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/master.csv], PartitionFilters: [], PushedFilters: [IsNotNull(master_id)], ReadSchema: struct<master_id:int,master_desc:string>
-   :     +- *(3) Project [order_id#202, order_date#203, order_customer_id#204, order_due_date#206, order_fact_completion_date#207, order_master_id#211]
-   :        +- *(3) Filter (((isnotnull(order_fact_completion_date#207) AND isnotnull(order_due_date#206)) AND (order_fact_completion_date#207 > order_due_date#206)) AND isnotnull(order_master_id#211))
-   :           +- FileScan csv [order_id#202,order_date#203,order_customer_id#204,order_due_date#206,order_fact_completion_date#207,order_master_id#211] Batched: false, DataFilters: [isnotnull(order_fact_completion_date#207), isnotnull(order_due_date#206), (order_fact_completion..., Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/order.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_fact_completion_date), IsNotNull(order_due_date), IsNotNull(order_master_id)], ReadSchema: struct<order_id:int,order_date:string,order_customer_id:int,order_due_date:string,order_fact_comp...
-   +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#391]
-      +- *(2) Project [order_customer_id#238, order_customer_desc#239]
-         +- *(2) Filter isnotnull(order_customer_id#238)
-            +- FileScan csv [order_customer_id#238,order_customer_desc#239] Batched: false, DataFilters: [isnotnull(order_customer_id#238)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/customer.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_customer_id)], ReadSchema: struct<order_customer_id:int,order_customer_desc:string>
+*(3) Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_due_date#42, order_fact_completion_date#43, order_customer_id#74, order_customer_desc#75]
++- *(3) BroadcastHashJoin [order_customer_id#40], [order_customer_id#74], LeftOuter, BuildRight
+   :- *(3) Project [master_id#16, master_desc#17, order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43]
+   :  +- *(3) BroadcastHashJoin [master_id#16], [order_master_id#47], Inner, BuildLeft
+   :     :- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#788]
+   :     :  +- *(1) Project [master_id#16, master_desc#17]
+   :     :     +- *(1) Filter isnotnull(master_id#16)
+   :     :        +- FileScan csv [master_id#16,master_desc#17] Batched: false, DataFilters: [isnotnull(master_id#16)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/master.csv], PartitionFilters: [], PushedFilters: [IsNotNull(master_id)], ReadSchema: struct<master_id:int,master_desc:string>
+   :     +- *(3) Project [order_id#38, order_date#39, order_customer_id#40, order_due_date#42, order_fact_completion_date#43, order_master_id#47]
+   :        +- *(3) Filter (((isnotnull(order_fact_completion_date#43) AND isnotnull(order_due_date#42)) AND (order_fact_completion_date#43 > order_due_date#42)) AND isnotnull(order_master_id#47))
+   :           +- FileScan csv [order_id#38,order_date#39,order_customer_id#40,order_due_date#42,order_fact_completion_date#43,order_master_id#47] Batched: false, DataFilters: [isnotnull(order_fact_completion_date#43), isnotnull(order_due_date#42), (order_fact_completion_d..., Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/order.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_fact_completion_date), IsNotNull(order_due_date), IsNotNull(order_master_id)], ReadSchema: struct<order_id:int,order_date:string,order_customer_id:int,order_due_date:string,order_fact_comp...
+   +- BroadcastExchange HashedRelationBroadcastMode(List(cast(input[0, int, true] as bigint))), [id=#799]
+      +- *(2) Project [order_customer_id#74, order_customer_desc#75]
+         +- *(2) Filter isnotnull(order_customer_id#74)
+            +- FileScan csv [order_customer_id#74,order_customer_desc#75] Batched: false, DataFilters: [isnotnull(order_customer_id#74)], Format: CSV, Location: InMemoryFileIndex[hdfs://namenode:9000/customer.csv], PartitionFilters: [], PushedFilters: [IsNotNull(order_customer_id)], ReadSchema: struct<order_customer_id:int,order_customer_desc:string>
 
+>>> 

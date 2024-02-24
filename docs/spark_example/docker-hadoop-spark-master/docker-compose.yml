@@ -56,6 +56,9 @@ services:
       SERVICE_PRECONDITION: "namenode:9000 namenode:9870 datanode:9864 resourcemanager:8088"
     volumes:
       - hadoop_historyserver:/hadoop/yarn/timeline
+    ports:
+      - "18080:18080"
+      - "4041:4040"
     env_file:
       - ./hadoop.env
 
@@ -68,6 +71,16 @@ services:
     ports:
       - "8080:8080"
       - "7077:7077"
+      - "4050:4040"
+      - "4051:4041"
+      - "4052:4042"
+      - "4053:4043"
+      - "4054:4044"
+      - "4055:4045"
+      - "4056:4046"
+      - "4057:4047"
+      - "4058:4048"
+      - "4059:4049"
     environment:
       - INIT_DAEMON_STEP=setup_spark
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
@@ -79,6 +92,7 @@ services:
       - spark-master
     ports:
       - "8081:8081"
+      - "4043:4040"
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
       - CORE_CONF_fs_defaultFS=hdfs://namenode:9000
@@ -117,6 +131,7 @@ services:
     container_name: presto-coordinator
     ports:
       - "8089:8089"
+      - "4044:4040"
 
 volumes:
   hadoop_namenode:
